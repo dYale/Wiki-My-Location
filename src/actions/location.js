@@ -1,6 +1,6 @@
 export const LOCATION = 'LOCATION';
 
-export function updateLocation() {
+export function locate() {
   return {
     type: LOCATION
   };

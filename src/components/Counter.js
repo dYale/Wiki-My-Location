@@ -1,5 +1,5 @@
 import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import Location from "./Location";
+import Location from '../containers/Location.js';
 
 export default class Counter extends React.Component {
   render() {
@@ -14,7 +14,7 @@ export default class Counter extends React.Component {
         <TouchableHighlight onPress={this.props.decrement}>
           <Text style={styles.text}>-</Text>
         </TouchableHighlight>
-
+        <Location />
       </View>
     );
   }
