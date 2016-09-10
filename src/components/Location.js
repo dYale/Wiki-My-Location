@@ -1,18 +1,13 @@
 import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import Location from "./Location";
 
-export default class Counter extends React.Component {
+export default class Location extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Clicked: {this.props.counter} times</Text>
 
-        <TouchableHighlight onPress={this.props.increment}>
-          <Text style={styles.text}>+</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={this.props.decrement}>
-          <Text style={styles.text}>-</Text>
+        <TouchableHighlight onPress={this.props.updateLocation}>
+          <Text style={styles.text}>Update Location</Text>
         </TouchableHighlight>
 
       </View>
