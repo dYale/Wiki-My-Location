@@ -1,8 +1,7 @@
-# minimal-react-native-redux
+# Wiki-My-Location
 
-This is a simple counter app for playing around with React Native.
+Ever wonder about the history immediately around you? Now you can learn instead of ruminating.
 
-*Note: This project is tailored for iOS development on a Mac*
 
 ## Tools
 * React Native
@@ -15,15 +14,15 @@ This is a simple counter app for playing around with React Native.
 ## Initial (One Time Only) Setup
 #### Clone the repo and install dependencies
 ```
-> git clone https://github.com/AndrewTHuang/minimal-react-native-redux.git
-> cd minimal-react-native-redux
+> git clone https://github.com/dyale/Wiki-My-Location.git
+> cd Wiki-My-Location
 > npm install
 ```
 
 #### Run the build process in Xcode
 Open the project in Xcode (v7.0 or higher)
 ```
-> open ios/MinimalReactNativeRedux.xcodeproj
+> open ios/Wiki-My-Location.xcodeproj
 
 Press `Command-R` to build the app
 ```
@@ -38,5 +37,5 @@ After the initial build, there is no need for Xcode if you're just playing aroun
 
 Open Simulator (Command-Space bar + 'simulator')
 Swipe to the second screen
-Tap on the `MinimalReactNativeRedux` icon
+Tap on the `Wiki-My-Location` icon
 ```
