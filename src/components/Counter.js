@@ -1,20 +1,14 @@
 import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Location from '../containers/Location.js';
+import Articles from '../containers/Articles.js';
+
 
 export default class Counter extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Clicked: {this.props.counter} times</Text>
-
-        <TouchableHighlight onPress={this.props.increment}>
-          <Text style={styles.text}>+</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight onPress={this.props.decrement}>
-          <Text style={styles.text}>-</Text>
-        </TouchableHighlight>
         <Location />
+
       </View>
     );
   }

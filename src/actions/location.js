@@ -1,4 +1,5 @@
 export const LOCATION = 'LOCATION';
+export const ARTICLES = "ARTICLE";
 
 export function locate() {
 
@@ -10,23 +11,28 @@ export function locate() {
 function newLocation (locationString, articles) {
   return {
     type: LOCATION,
-    locationString,
-    articles
+    locationString
   };
+}
+
+function newArticles (articles){
+  return {
+    type: ARTICLES,
+    articles
+  }
 }
 
 
 const getLocationData = function(dispatch) {
     navigator.geolocation.getCurrentPosition(
     (location) => {
-      let articles = [];
       fetch(`https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=10000&format=json&gscoord=${location.coords.latitude}|${location.coords.longitude}`)
         .then((x) => x.json())
-        .then(x => articles = x.query.geosearch)
+        .then(x => dispatch(newArticles(x.query.geosearch)))
         .then( () => fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coords.latitude},${location.coords.longitude} &key=[key]`, {method: "GET"})
         .then((response) => response.json()).then(x => {
           location = x.results[3].formatted_address;
-          dispatch(newLocation(location, articles));
+          dispatch(newLocation(location));
         }));
     },
       //TODO: add error handing reducer
