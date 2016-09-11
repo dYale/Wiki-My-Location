@@ -1,14 +1,16 @@
 import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Location from '../containers/Location.js';
 import Articles from '../containers/Articles.js';
-
+import Browser from '../containers/Browser.js';
+import Map from '../containers/Map.js';
 
 export default class Counter extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Location />
-
+        <Browser />
+        <Map />
       </View>
     );
   }
