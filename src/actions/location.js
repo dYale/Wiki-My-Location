@@ -8,7 +8,7 @@ export function locate() {
   };
 }
 
-function newLocation (locationString, articles) {
+function newLocation (locationString) {
   return {
     type: LOCATION,
     locationString
