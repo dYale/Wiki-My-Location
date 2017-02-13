@@ -1,7 +1,6 @@
 import { LOCATION } from '../actions/location';
 
 export default function location(state = "No Location Yet", action) {
-  console.log("LOCATION", action)
 
   switch (action.type) {
     case LOCATION:

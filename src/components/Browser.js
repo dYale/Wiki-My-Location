@@ -13,8 +13,6 @@ export default class Browser extends React.Component {
         <Text>Browser Here</Text>
         <WebView style={styles.container}
                  source={{uri:  'https://github.com/facebook/react-native'}}
-                 style={{marginTop: 20}}
-                 startInLoadingState={true}
         />
       </View>
     );
@@ -23,10 +21,10 @@ export default class Browser extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    width: 100
+    width: 100,
+    height: 100
   },
   header: {
     backgroundColor: 'green',
