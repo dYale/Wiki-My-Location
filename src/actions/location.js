@@ -2,7 +2,6 @@ export const LOCATION = 'LOCATION';
 export const ARTICLES = "ARTICLE";
 export const MARKER = "MARKER";
 
-
 export function locate() {
   return function (dispatch) {
     getLocationData(dispatch);
