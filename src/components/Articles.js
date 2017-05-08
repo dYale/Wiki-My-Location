@@ -8,7 +8,7 @@ export default class Articles extends React.Component {
     let listItems = this.props.articles.map( (item) => {
       const url = `https://en.wikipedia.org/?curid=${item.pageid}`;
       return (
-        <Article key={item.pageid} title={item.title} url={url} dist={item.dist}/>
+        <Article pageid={item.pageid} title={item.title} url={url} dist={item.dist}/>
       );
     });
 

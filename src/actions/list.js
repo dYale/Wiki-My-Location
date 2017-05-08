@@ -57,7 +57,6 @@ const getLocationData = function (dispatch) {
 
 
 const _formatForMap = function (arr, coords) {
-  console.log(coords);
   return arr.map((article) => {
     return {
       latitude: article.lat,
