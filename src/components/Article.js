@@ -5,7 +5,7 @@ export default class Article extends React.Component {
   render() {
     return (
       <View>
-        <TouchableHighlight url={this.props.url} onPress={this.props.openBrowser}
+        <TouchableHighlight url={this.props.url} onPress={() => this.props.openBrowser(this.props.url)}
                             style={styles.container}>
           <Text>{this.props.title} - {this.props.dist}M</Text>
         </TouchableHighlight>

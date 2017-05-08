@@ -11,6 +11,7 @@ const rootReducer = combineReducers({
   counter,
   list,
   articles,
+  browser,
   map,
   article
 });

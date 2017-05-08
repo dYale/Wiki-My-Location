@@ -8,11 +8,12 @@ export default class Browser extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <View>
         <Text>Browser Here</Text>
         <WebView style={styles.container}
-                 source={{uri:  'https://github.com/facebook/react-native'}}
+                 source={{uri: this.props.url}}
         />
       </View>
     );
