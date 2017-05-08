@@ -1,6 +1,7 @@
 export const LOCATION = 'LOCATION';
 export const ARTICLES = "ARTICLE";
 export const MARKER = "MARKER";
+import geolib from "geolib";
 
 export function locate() {
   return function (dispatch) {
@@ -37,15 +38,15 @@ const getLocationData = function (dispatch) {
         .then((x) => x.json())
         .then(x => {
           articles = x.query.geosearch;
-          return dispatch(newArticles(x.query.geosearch))
+          return dispatch(newArticles(articles))
         })
         .then(() => fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coords.latitude},${location.coords.longitude} &key=AIzaSyCp8gjZugbZbUH0tBkcifbQrOP6AQ1zy3E`, {method: "GET"})
           .then((response) => response.json())
           .then(x => {
-            location = x.results[3].formatted_address;
-            dispatch(newLocation(location));
+            const locationString = x.results[3].formatted_address;
+            dispatch(newLocation(locationString));
           }))
-        .then(() => dispatch(markerMap(_formatForMap(articles))));
+        .then(() => {dispatch(markerMap(_formatForMap(articles, location.coords)))});
     },
     //TODO: add error handing reducer
     (error) => alert(JSON.stringify(error)),
@@ -54,12 +55,15 @@ const getLocationData = function (dispatch) {
 };
 
 
-const _formatForMap = function (arr) {
+
+const _formatForMap = function (arr, coords) {
+  console.log(coords);
   return arr.map((article) => {
     return {
       latitude: article.lat,
       longitude: article.lon,
-      title: article.title
+      title: article.title,
+      distance: geolib.getDistanceSimple(coords, {latitude: article.lat, longitude: article.lon})
     }
   })
 };

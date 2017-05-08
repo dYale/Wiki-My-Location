@@ -1,6 +1,6 @@
-import { LOCATION } from '../actions/location';
+import { LOCATION } from '../actions/list';
 
-export default function location(state = "No Location Yet", action) {
+export default function list(state = "No Location Yet", action) {
 
   switch (action.type) {
     case LOCATION:

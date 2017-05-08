@@ -1,4 +1,4 @@
-import { ARTICLES } from '../actions/location';
+import { ARTICLES } from '../actions/list';
 
 export default function articles(state = [], action) {
   switch (action.type) {

@@ -2,7 +2,7 @@ import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import Articles from '../containers/Articles.js';
 
 
-export default class Location extends React.Component {
+export default class List extends React.Component {
 
   componentDidMount() {
     this.props.locate();
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lemonchiffon'
   },
   header: {
-    backgroundColor: 'green',
+    backgroundColor: '#CEF2E0',
     flex: 0.9
   },
   text: {

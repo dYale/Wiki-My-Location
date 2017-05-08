@@ -1,5 +1,5 @@
 import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import Location from '../containers/Location.js';
+import List from '../containers/List.js';
 import Articles from '../containers/Articles.js';
 import Browser from '../containers/Browser.js';
 import Map from '../containers/Map.js';
@@ -8,7 +8,7 @@ export default class Counter extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Location />
+        <List />
         <Browser />
         <Map />
       </View>
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'lemonchiffon'
+    backgroundColor: '#F6F6F6'
   },
   text: {
     fontSize: 30,

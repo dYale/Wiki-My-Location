@@ -1,4 +1,4 @@
-import { MARKER } from '../actions/location';
+import { MARKER } from '../actions/list';
 
 export default function map(state = [], action) {
   switch (action.type) {
