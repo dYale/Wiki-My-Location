@@ -1,27 +1,25 @@
-import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import React from 'react';
+import { Button, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import List from '../containers/List.js';
 import Articles from '../containers/Articles.js';
 import Browser from '../containers/Browser.js';
 import Map from '../containers/Map.js';
+import {Tabs, Root} from '../config/router.js';
 
 export default class Counter extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <List />
-        <Browser />
-        <Map />
-      </View>
+      <Root />
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F6F6F6'
+    backgroundColor: '#F6F6F6',
+    alignSelf: 'stretch'
   },
   text: {
     fontSize: 30,

@@ -1,4 +1,5 @@
-import React, { StyleSheet, Text, WebView, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 
 export default class Browser extends React.Component {

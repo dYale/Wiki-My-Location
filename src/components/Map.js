@@ -1,4 +1,6 @@
-import React, { StyleSheet, Text, MapView, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text} from 'react-native';
+import MapView from 'react-native-maps';
 
 const earthRadiusInKM = 6371;
 const radiusInKM = 2;
@@ -9,7 +11,7 @@ export default class Map extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { region: {longitude: 0, latitude: 0}};
+    this.state = { region: {longitude: 0, latitude: 0, longitudeDelta: 0, latitudeDelta: 0}};
     navigator.geolocation.getCurrentPosition( (location) => {
       this.showRegion(location.coords)
     });
@@ -36,13 +38,23 @@ export default class Map extends React.Component {
     return angle * 57.29577951308232; // angle / Math.PI * 180
   }
 
+  getInitialState() {
+    return {
+      region: {
+        latitude: 37.78825,
+        longitude: -122.4324,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      },
+    };
+  }
+
   render() {
+    console.log(this.props);
     return (
-      <View>
         <MapView annotations={this.props.markers}
-          style={styles.map} showsUserLocation region={this.state.region}
+                 style={styles.map} showsUserLocation region={this.state.region} onRegionChange={this.onRegionChange}
         />
-      </View>
     );
   }
 
@@ -50,8 +62,7 @@ export default class Map extends React.Component {
 
 const styles = StyleSheet.create({
   map: {
-    height: 150,
-    width: 150,
+    flex: 1,
     margin: 10,
     borderColor: '#000000'
   }

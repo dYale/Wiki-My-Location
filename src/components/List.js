@@ -1,11 +1,13 @@
-import React, { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+
 import Articles from '../containers/Articles.js';
 
 
 export default class List extends React.Component {
 
   componentDidMount() {
-    this.props.locate();
+    //this.props.locate();
   }
 
   render() {
@@ -13,7 +15,7 @@ export default class List extends React.Component {
       <View style={styles.container}>
         <View style={styles.header}>
           <TouchableHighlight style={styles.button} onPress={this.props.locate}>
-            <Text style={styles.text}>Update</Text>
+            <Text style={styles.text}>Wiki My Location</Text>
           </TouchableHighlight>
           <TouchableHighlight>
             <Text style={styles.text}>{this.props.location}</Text>
