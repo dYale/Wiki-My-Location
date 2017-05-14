@@ -4,10 +4,9 @@ import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 export default class Article extends React.Component {
 
   render() {
-    console.log(this.props.title);
     return (
         <TouchableHighlight
-          onPress={() => {this.props.openBrowser(this.props.url); this.props.getSummary(this.props.pageid)}}
+          onPress={() => this.props.getSummary(this.props.pageid)}
           style={styles.container}>
           <Text>{this.props.title} - {this.props.dist}M</Text>
         </TouchableHighlight>

@@ -4,12 +4,7 @@ import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
 export default class Browser extends React.Component {
 
-  renderError (stuff) {
-    console.log(stuff);
-  }
-
   render() {
-    console.log(this.props);
     return (
       <View>
         <Text>Browser Here</Text>

@@ -7,7 +7,7 @@ export default class ListWrapper extends React.Component {
 
   render() {
     return (
-        <List />
+        <List parentNavigation={this.props.navigation}/>
     );
   }
 }

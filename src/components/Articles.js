@@ -6,16 +6,12 @@ import Article from '../containers/Article.js';
 
 export default class Articles extends React.Component {
 
-  componentDidMount() {
-    console.log(this.props);
-  }
 
   render() {
     let listItems = this.props.articles.map( (item) => {
       const url = `https://en.wikipedia.org/?curid=${item.pageid}`;
-      console.log("RENDERING");
       return (
-        <Article key={item.pageid} pageid={item.pageid} title={item.title} url={url} dist={item.dist}/>
+        <Article parentNavigation={this.props.parentNavigation} key={item.pageid} pageid={item.pageid} title={item.title} url={url} dist={item.dist}/>
       );
     });
 

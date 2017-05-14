@@ -13,7 +13,6 @@ export default class List extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -23,7 +22,7 @@ export default class List extends React.Component {
           <TouchableHighlight>
             <Text style={styles.text}>{this.props.location}</Text>
           </TouchableHighlight>
-          <Articles />
+          <Articles parentNavigation={this.props.parentNavigation}/>
         </View>
       </View>
     );

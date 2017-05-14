@@ -1,6 +1,3 @@
-/**
- * Created by stan229 on 5/27/16.
- */
 import { combineReducers } from "redux";
 import counter from './counter';
 import list from './list';
@@ -8,6 +5,8 @@ import articles from './articles';
 import article from './article';
 import browser from './browser';
 import map from './map';
+import page from './page';
+
 
 export default function getRootReducer(navReducer) {
     return combineReducers({
@@ -17,6 +16,7 @@ export default function getRootReducer(navReducer) {
         articles,
         browser,
         map,
-        article
+        article,
+        page
     });
 }
