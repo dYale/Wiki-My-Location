@@ -37,7 +37,6 @@ const getLocationData = function (dispatch) {
         .then((x) => x.json())
         .then(x => {
           articles = x.query.geosearch;
-          console.log(articles);
           return dispatch(newArticles(articles))
         })
         .then(() => fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coords.latitude},${location.coords.longitude} &key=AIzaSyCp8gjZugbZbUH0tBkcifbQrOP6AQ1zy3E`, {method: "GET"})

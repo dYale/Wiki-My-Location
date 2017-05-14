@@ -1,5 +1,6 @@
 export const OPENARTICLE = "OPENARTICLE";
 export const GETSUMMARY = "GETSUMMARY";
+import { NavigationActions } from 'react-navigation'
 
 
 export function openBrowser(url) {
@@ -8,10 +9,24 @@ export function openBrowser(url) {
   };
 }
 
-export function getSummary(pageId) {
+
+
+export function getSummary(article, nav) {
+
+  const navigateAction = NavigationActions.navigate({
+
+    routeName: 'Article',
+
+    params: article,
+
+    action: NavigationActions.navigate({ routeName: 'Summary'})
+  });
+
+
   return function (dispatch) {
-    fetch(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&pageids=${pageId}`)
+    fetch(`https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&pageids=${article.pageid}`)
       .then( (summary) => summary.json())
-      .then( (page) => dispatch(GETSUMMARY, page.query.pages[pageId]));
+      .then( (page) => dispatch({type: GETSUMMARY, summary: page.query.pages[article.pageid]}))
+      .then( () => nav.navigate("Summary", {...article}));
   }
 }

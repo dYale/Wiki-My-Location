@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Page from '../components/Page';
 
 function mapStateToProps(state) {
+  console.log(state);
   return {
-    summary: state.summary
+    summary: state.page
   }
 }
 

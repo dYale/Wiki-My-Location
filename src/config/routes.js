@@ -1,18 +1,30 @@
 import React from 'react';
 import MapWrapper from "../components/MapWrapper";
 import ListWrapper from "../components/ListWrapper";
+import PageWrapper from "../components/PageWrapper";
+import { StackNavigator } from "react-navigation";
 
 import { Icon } from 'react-native-elements';
 
+export const ListStack = StackNavigator({
+  List: {
+    screen: ListWrapper
+  },
+  Summary: {
+    screen: PageWrapper,
+    navigationOptions: ({ navigation }) =>  ({title: `${navigation.state.params.title}`})
+  }
+});
+
 const Routes = {
-  ListWrapper: {
-    screen: ListWrapper,
+  List: {
+    screen: ListStack,
     navigationOptions: {
       tabBarLabel: 'ListWrapper',
       tabBarIcon: ({ tintColor }) => <Icon name="view-list" size={35} color={tintColor}/>
     }
   },
-  MapWrapper: {
+  Map: {
     screen: MapWrapper,
     navigationOptions: {
       tabBarLabel: 'Map',
@@ -20,5 +32,6 @@ const Routes = {
     }
   }
 };
+
 
 export default Routes;
