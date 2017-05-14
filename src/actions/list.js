@@ -1,7 +1,6 @@
 export const LOCATION = 'LOCATION';
 export const ARTICLES = "ARTICLE";
 export const MARKER = "MARKER";
-import geolib from "geolib";
 
 export function locate() {
   return function (dispatch) {
@@ -38,6 +37,7 @@ const getLocationData = function (dispatch) {
         .then((x) => x.json())
         .then(x => {
           articles = x.query.geosearch;
+          console.log(articles);
           return dispatch(newArticles(articles))
         })
         .then(() => fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.coords.latitude},${location.coords.longitude} &key=AIzaSyCp8gjZugbZbUH0tBkcifbQrOP6AQ1zy3E`, {method: "GET"})
@@ -59,10 +59,11 @@ const getLocationData = function (dispatch) {
 const _formatForMap = function (arr, coords) {
   return arr.map((article) => {
     return {
-      latitude: article.lat,
-      longitude: article.lon,
-      title: article.title,
-      distance: geolib.getDistanceSimple(coords, {latitude: article.lat, longitude: article.lon})
+      coordinates: {
+        latitude: article.lat,
+        longitude: article.lon
+      },
+      title: article.title
     }
   })
 };

@@ -4,13 +4,16 @@ import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Articles from '../containers/Articles.js';
 
 
+
+
 export default class List extends React.Component {
 
   componentDidMount() {
-    //this.props.locate();
+    this.props.locate();
   }
 
   render() {
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
