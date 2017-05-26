@@ -58,7 +58,11 @@ export default class Map extends React.Component {
         key={marker.title}
         coordinate={marker.coordinates}
         title={marker.title}
+        onSelect={() => this.props.actions.articleActions.getSummary(marker.id)}
+        onPress={() => this.props.actions.articleActions.getSummary(marker.id)}
+        description={this.props.currentSummary}
       />
+
     ))}</MapView>
     )
   }

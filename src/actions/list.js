@@ -62,7 +62,8 @@ const _formatForMap = function (arr, coords) {
         latitude: article.lat,
         longitude: article.lon
       },
-      title: article.title
+      title: article.title,
+      id: article.pageid
     }
   })
 };
