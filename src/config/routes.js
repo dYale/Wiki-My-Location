@@ -20,7 +20,7 @@ const Routes = {
   List: {
     screen: ListStack,
     navigationOptions: {
-      tabBarLabel: 'ListWrapper',
+      tabBarLabel: 'List',
       tabBarIcon: ({ tintColor }) => <Icon name="view-list" size={35} color={tintColor}/>
     }
   },
