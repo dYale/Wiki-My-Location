@@ -6,7 +6,8 @@ import * as listActions from '../actions/list';
 
 function mapStateToProps(state) {
   return {
-    markers: state.map
+    markers : state.map.markers,
+    summary: state.map.summary
   };
 }
 

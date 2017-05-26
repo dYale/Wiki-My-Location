@@ -1,12 +1,12 @@
 import { MARKER } from '../actions/list';
 import { GETMAPSUMMARY } from '../actions/map';
 
-export default function map(state = [], action) {
+export default function map(state = {markers: [], summary: "Loading..."}, action) {
   switch (action.type) {
     case MARKER:
-      return action.markers;
+      return {...state, markers: action.markers};
     case GETMAPSUMMARY:
-      return action.summary;
+      return {...state, summary: action.summary};
     default:
       return state;
   }
