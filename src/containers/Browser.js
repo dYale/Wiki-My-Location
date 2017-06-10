@@ -14,7 +14,7 @@ function mapDispatchToProps(dispatch) {
   return {
     actions: {
       articleActions: bindActionCreators(ArticleActions, dispatch),
-      browserActions:  bindActionCreators(BrowserActions, dispatch)
+      browserActions: bindActionCreators(BrowserActions, dispatch)
     }
   };
 }

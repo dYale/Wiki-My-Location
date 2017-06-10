@@ -8,10 +8,11 @@ export default class Articles extends React.Component {
 
 
   render() {
-    let listItems = this.props.articles.map( (item) => {
+    let listItems = this.props.articles.map((item) => {
       const url = `https://en.wikipedia.org/?curid=${item.pageid}`;
       return (
-        <Article parentNavigation={this.props.parentNavigation} key={item.pageid} pageid={item.pageid} title={item.title} url={url} dist={item.dist}/>
+        <Article parentNavigation={this.props.parentNavigation} key={item.pageid} pageid={item.pageid}
+                 title={item.title} url={url} dist={item.dist}/>
       );
     });
 

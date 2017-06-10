@@ -45,14 +45,15 @@ const getLocationData = function (dispatch) {
             const locationString = x.results[3].formatted_address;
             dispatch(newLocation(locationString));
           }))
-        .then(() => {dispatch(markerMap(_formatForMap(articles, location.coords)))});
+        .then(() => {
+          dispatch(markerMap(_formatForMap(articles, location.coords)))
+        });
     },
     //TODO: add error handing reducer
     (error) => alert(JSON.stringify(error)),
     {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
   );
 };
-
 
 
 const _formatForMap = function (arr, coords) {
