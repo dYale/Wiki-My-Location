@@ -52,19 +52,19 @@ export default class Map extends React.Component {
   render() {
     return (
       <MapView
-               style={styles.map} showsUserLocation region={this.state.region} onRegionChange={this.onRegionChange}>
-    {this.props.markers.map(marker => (
+        style={styles.map} showsUserLocation region={this.state.region} onRegionChange={this.onRegionChange}>
+        {this.props.markers.map(marker => (
 
-      <MapView.Marker
-        key={marker.title}
-        coordinate={marker.coordinates}
-        title={marker.title}
-        onSelect={() => this.props.actions.mapActions.getSummary(marker.id)}
-        onPress={() => this.props.actions.mapActions.getSummary(marker.id)}
-        description={this.props.summary}
-      />
+          <MapView.Marker
+            key={marker.title}
+            coordinate={marker.coordinates}
+            title={marker.title}
+            onSelect={() => this.props.actions.mapActions.getSummary(marker.id)}
+            onPress={() => this.props.actions.mapActions.getSummary(marker.id)}
+            description={this.props.summary}
+          />
 
-    ))}</MapView>
+        ))}</MapView>
     )
   }
 

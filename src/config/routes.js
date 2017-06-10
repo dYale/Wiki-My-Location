@@ -12,7 +12,7 @@ export const ListStack = StackNavigator({
   },
   Summary: {
     screen: PageWrapper,
-    navigationOptions: ({ navigation }) =>  ({title: `${navigation.state.params.title}`})
+    navigationOptions: ({ navigation }) => ({title: `${navigation.state.params.title}`})
   }
 });
 

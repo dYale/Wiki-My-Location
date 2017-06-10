@@ -4,8 +4,6 @@ import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Articles from '../containers/Articles.js';
 
 
-
-
 export default class List extends React.Component {
 
   componentDidMount() {

@@ -5,11 +5,11 @@ export default class Article extends React.Component {
 
   render() {
     return (
-        <TouchableHighlight
-          onPress={() => this.props.getSummary(this.props, this.props.parentNavigation)}
-          style={styles.container}>
-          <Text>{this.props.title} - {this.props.dist}M</Text>
-        </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => this.props.getSummary(this.props, this.props.parentNavigation)}
+        style={styles.container}>
+        <Text>{this.props.title} - {this.props.dist}M</Text>
+      </TouchableHighlight>
     );
   };
 }

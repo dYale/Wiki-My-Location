@@ -9,14 +9,14 @@ import page from './page';
 
 
 export default function getRootReducer(navReducer) {
-    return combineReducers({
-        nav: navReducer,
-        counter,
-        list,
-        articles,
-        browser,
-        map,
-        article,
-        page
-    });
+  return combineReducers({
+    nav: navReducer,
+    counter,
+    list,
+    articles,
+    browser,
+    map,
+    article,
+    page
+  });
 }

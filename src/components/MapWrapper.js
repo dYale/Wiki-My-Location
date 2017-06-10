@@ -6,7 +6,7 @@ export default class MapWrapper extends React.Component {
 
   render() {
     return (
-        <Map />
+      <Map />
     );
   }
 }
