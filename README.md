@@ -22,7 +22,7 @@ Ever wonder about the history immediately around you? Now you can learn instead 
 #### Run the build process in Xcode
 Open the project in Xcode (v7.0 or higher)
 ```
-> open ios/Wiki-My-Location.xcodeproj
+> open ios/WikiMyLocation.xcodeproj
 
 Press `Command-R` to build the app
 ```
